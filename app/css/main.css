@@ -1,0 +1,13 @@
+@media screen and (max-width: 640px) {
+  body {
+    background-color: #000; } }
+
+html {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif; }
+
+a {
+  text-decoration: none; }
