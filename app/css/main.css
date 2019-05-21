@@ -6,7 +6,7 @@
   font-family: "Space Age";
   src: url("../fonts/Space Age/SpaceAge.otf"); }
 
-body {
+html {
   overflow-x: hidden;
   min-width: 320px;
   font-size: 16px;
@@ -16,23 +16,44 @@ body {
 a {
   text-decoration: none; }
 
+.btn {
+  display: inline-block;
+  padding: 15px 45px;
+  border: 2px solid #0f6dc4;
+  border-radius: 30px;
+  font-size: 21px;
+  color: #000;
+  -webkit-transition: .25s;
+  -o-transition: .25s;
+  transition: .25s; }
+  .btn:hover {
+    background-color: #0f6dc4;
+    color: #fff; }
+
 .ModalX-logo {
-  font-family: "Space Age";
-  font-size: 64px;
-  background: -webkit-linear-gradient(left, #083561, #0e6bc2 100px);
-  background: -o-linear-gradient(left, #083561, #0e6bc2 100px);
-  background: linear-gradient(to right, #083561, #0e6bc2 100px);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 25px; }
 
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 85%;
+  left: 50%;
   top: 0;
-  left: 0;
-  width: 100%; }
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 15px 0; }
   .nav-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -41,18 +62,19 @@ a {
     -ms-flex-align: center;
     align-items: center; }
     .nav-menu-item {
-      margin: 0 10px;
+      margin: 0 21px;
+      font-size: 21px;
       color: #363636;
-      font-size: 25px; }
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+      .nav-menu-item:hover {
+        color: #0f6dc4; }
   .nav .links .git {
+    margin: 0 10px;
     color: #000; }
   .nav .links .telegram {
+    margin-right: 30px;
     color: #12a4da; }
-  .nav .btn.download {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 25px;
-    border: 1px solid #0f6dc4; }
+  .nav .links .git, .nav .links .telegram {
+    font-size: 23px; }
