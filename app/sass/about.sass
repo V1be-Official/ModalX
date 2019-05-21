@@ -6,7 +6,7 @@ html
     min-width: 320px
     font-size: 16px
     font-weight: 400
-    font-family: 'Montserrat', sans-serif
+    font-family: Montserrat, sans-serif
 a 
     text-decoration: none
 .btn
@@ -20,19 +20,21 @@ a
     &:hover
         background-color: $main-color
         color: #fff
-.ModalX-logo
-    display: inline-flex
-    height: 25px
 .nav
     display: flex
     position: fixed
+    width: 100%
     align-items: center
-    justify-content: space-between
-    width: 85%
-    left: 50%
+    justify-content: center
+    left: 0
     top: 0
-    transform: translateX(-50%)
     padding: 15px 0
+    background-color: #fff
+    .wrapper
+        display: flex
+        width: 85%
+        align-items: center 
+        justify-content: space-between
     &-menu 
         display: flex
         align-items: center
@@ -43,6 +45,10 @@ a
             transition: .2s
             &:hover
                 color: $main-color
+    .ModalX-logo
+        display: inline-flex
+        height: 25px
+        margin-top: 6px
     .links
         .git
             margin: 0 10px
@@ -52,26 +58,44 @@ a
             color: #12a4da
         .git, .telegram
             font-size: 23px
-.first_block
+.header
+	position: relative
 	width: 100vw
 	height: calc(100vh - 84px)
 	margin-top: 84px
+.first_pic, .first_dark_pic
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+.first_pic
 	background-image: url('../img/man.jpg')
 	background-size: cover
-.first_block
+	background-position: center
+	z-index: 1
+.first_dark_pic
+	z-index: 2
+	background-color: #012035
+	opacity: 0.60
+.first_block_main
+	position: relative
+	z-index: 3
+.first_block_main
 	h1
 		text-align: center
 		font-size: 130px
 		color: white
 		font-weight: bold
-		font-family: Montserrat
-		padding-top: 250px
-.first_block
+		font-family: Montserrat, sans-serif
+		padding-top: 200px
+.first_block_main
 	p
 		text-align: center
 		color: white
 		font-size: 25px
-		margin-top: 50px
+		padding-top: 50px
+		font-family: Montserrat, sans-serif
 .button_main
 	width: 240px
 	height: 66px
@@ -79,6 +103,8 @@ a
 	background-color: #0f6dc4
 	text-align: center
 	line-height: 66px
-	font-size: 27px
+	font-size: 25px
 	margin: 0 auto
 	color: white
+	margin-top: 50px
+	font-family: Montserrat, sans-serif
