@@ -49,6 +49,9 @@ a {
   .nav .links .telegram {
     color: #12a4da; }
   .nav .btn.download {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 25px;
