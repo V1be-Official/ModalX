@@ -49,4 +49,7 @@ a {
   .nav .links .telegram {
     color: #12a4da; }
   .nav .btn.download {
-    font-size: 25px; }
+    padding: 10px 20px;
+    border: 10px;
+    font-size: 25px;
+    border: 1px solid #0f6dc4; }
