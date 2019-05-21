@@ -9,7 +9,7 @@
 html {
   overflow-x: hidden;
   min-width: 320px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif; }
 
@@ -68,7 +68,7 @@ a {
     -ms-flex-align: center;
     align-items: center; }
     .nav-menu-item {
-      margin: 0 21px;
+      margin: 0 25px;
       font-size: 19px;
       color: #363636;
       -webkit-transition: .2s;
@@ -161,10 +161,12 @@ a {
     min-height: 490px; }
   .header-title {
     font-size: 90px;
-    font-weight: bold; }
+    font-weight: bold;
+    letter-spacing: 1.6; }
   .header-subtitle {
     font-size: 21px;
-    line-height: 1.65; }
+    line-height: 1.65;
+    letter-spacing: 2px; }
   .header .links .btn {
     padding: 17px 45px;
     font-size: 18px;
