@@ -1,5 +1,84 @@
 @import 'vars'
 @import 'fonts'
+@import '_media'
+html
+    overflow-x: hidden
+    min-width: 320px
+    font-size: 16px
+    font-weight: 400
+    font-family: 'Montserrat', sans-serif
+a 
+    text-decoration: none
+.btn
+    display: inline-block
+    padding: 15px 45px
+    border: 2px solid $main-color
+    border-radius: 30px
+    font-size: 21px
+    color: #000
+    transition: .25s
+    &:hover
+        background-color: $main-color
+        color: #fff
+.ModalX-logo
+    display: inline-flex
+    height: 25px
+.nav
+    display: flex
+    position: fixed
+    align-items: center
+    justify-content: space-between
+    width: 85%
+    left: 50%
+    top: 0
+    transform: translateX(-50%)
+    padding: 15px 0
+    &-menu 
+        display: flex
+        align-items: center
+        &-item 
+            margin: 0 21px
+            font-size: 21px
+            color: $text-color
+            transition: .2s
+            &:hover
+                color: $main-color
+    .links
+        .git
+            margin: 0 10px
+            color: #000
+        .telegram
+            margin-right: 30px
+            color: #12a4da
+        .git, .telegram
+            font-size: 23px
 .first_block
-	width: 100%
-	background-image: url('../../src/images/man.jpg')
+	width: 100vw
+	height: calc(100vh - 84px)
+	margin-top: 84px
+	background-image: url('../img/man.jpg')
+	background-size: cover
+.first_block
+	h1
+		text-align: center
+		font-size: 130px
+		color: white
+		font-weight: bold
+		font-family: Montserrat
+		padding-top: 250px
+.first_block
+	p
+		text-align: center
+		color: white
+		font-size: 25px
+		margin-top: 50px
+.button_main
+	width: 240px
+	height: 66px
+	border-radius: 40px
+	background-color: #0f6dc4
+	text-align: center
+	line-height: 66px
+	font-size: 27px
+	margin: 0 auto
+	color: white

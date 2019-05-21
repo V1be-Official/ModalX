@@ -2,6 +2,111 @@
   font-family: "Space Age";
   src: url("../fonts/Space Age/SpaceAge.otf"); }
 
+@media screen and (max-width: 640px) {
+  body {
+    background-color: #fff; } }
+
+html {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  display: inline-block;
+  padding: 15px 45px;
+  border: 2px solid #0f6dc4;
+  border-radius: 30px;
+  font-size: 21px;
+  color: #000;
+  -webkit-transition: .25s;
+  -o-transition: .25s;
+  transition: .25s; }
+  .btn:hover {
+    background-color: #0f6dc4;
+    color: #fff; }
+
+.ModalX-logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 25px; }
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 85%;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 15px 0; }
+  .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .nav-menu-item {
+      margin: 0 21px;
+      font-size: 21px;
+      color: #363636;
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+      .nav-menu-item:hover {
+        color: #0f6dc4; }
+  .nav .links .git {
+    margin: 0 10px;
+    color: #000; }
+  .nav .links .telegram {
+    margin-right: 30px;
+    color: #12a4da; }
+  .nav .links .git, .nav .links .telegram {
+    font-size: 23px; }
+
 .first_block {
-  width: 100%;
-  background-image: url("../../src/images/man.jpg"); }
+  width: 100vw;
+  height: calc(100vh - 84px);
+  margin-top: 84px;
+  background-image: url("../img/man.jpg");
+  background-size: cover; }
+
+.first_block h1 {
+  text-align: center;
+  font-size: 130px;
+  color: white;
+  font-weight: bold;
+  font-family: Montserrat;
+  padding-top: 250px; }
+
+.first_block p {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin-top: 50px; }
+
+.button_main {
+  width: 240px;
+  height: 66px;
+  border-radius: 40px;
+  background-color: #0f6dc4;
+  text-align: center;
+  line-height: 66px;
+  font-size: 27px;
+  margin: 0 auto;
+  color: white; }
