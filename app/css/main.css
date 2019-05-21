@@ -30,30 +30,33 @@ a {
     background-color: #0f6dc4;
     color: #fff; }
 
-.ModalX-logo {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: 25px; }
-
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  width: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 85%;
-  left: 50%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
   top: 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  padding: 15px 0; }
+  padding: 15px 0;
+  background-color: #fff; }
+  .nav .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 85%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .nav-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -70,6 +73,12 @@ a {
       transition: .2s; }
       .nav-menu-item:hover {
         color: #0f6dc4; }
+  .nav .ModalX-logo {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 25px;
+    margin-top: 6px; }
   .nav .links .git {
     margin: 0 10px;
     color: #000; }
@@ -78,3 +87,12 @@ a {
     color: #12a4da; }
   .nav .links .git, .nav .links .telegram {
     font-size: 23px; }
+
+header.header {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 84px);
+  margin-top: 84px;
+  background-image: url(../img/cosmos.jpg);
+  background-size: cover;
+  background-position: center; }
