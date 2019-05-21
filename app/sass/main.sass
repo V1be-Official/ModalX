@@ -20,19 +20,21 @@ a
     &:hover
         background-color: $main-color
         color: #fff
-.ModalX-logo
-    display: inline-flex
-    height: 25px
 .nav
     display: flex
     position: fixed
+    width: 100%
     align-items: center
-    justify-content: space-between
-    width: 85%
-    left: 50%
+    justify-content: center
+    left: 0
     top: 0
-    transform: translateX(-50%)
     padding: 15px 0
+    background-color: #fff
+    .wrapper
+        display: flex
+        width: 85%
+        align-items: center 
+        justify-content: space-between
     &-menu 
         display: flex
         align-items: center
@@ -43,6 +45,10 @@ a
             transition: .2s
             &:hover
                 color: $main-color
+    .ModalX-logo
+        display: inline-flex
+        height: 25px
+        margin-top: 6px
     .links
         .git
             margin: 0 10px
@@ -53,5 +59,13 @@ a
         .git, .telegram
             font-size: 23px
 
+header.header
+    position: relative
+    width: 100vw
+    height: calc(100vh - 84px)
+    margin-top: 84px
+    background-image: url(../img/cosmos.jpg)
+    background-size: cover
+    background-position: center
 
     
