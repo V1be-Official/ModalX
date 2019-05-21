@@ -2,6 +2,10 @@
   body {
     background-color: #000; } }
 
+@font-face {
+  font-family: "Space Age";
+  src: url("../fonts/Space Age/SpaceAge.otf"); }
+
 html {
   overflow-x: hidden;
   min-width: 320px;
