@@ -1,3 +1,7 @@
 @font-face {
   font-family: "Space Age";
   src: url("../fonts/Space Age/SpaceAge.otf"); }
+
+.first_block {
+  width: 100%;
+  background-image: url("../../src/images/"); }
