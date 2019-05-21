@@ -1,12 +1,12 @@
 @media screen and (max-width: 640px) {
   body {
-    background-color: #000; } }
+    background-color: #fff; } }
 
 @font-face {
   font-family: "Space Age";
   src: url("../fonts/Space Age/SpaceAge.otf"); }
 
-html {
+body {
   overflow-x: hidden;
   min-width: 320px;
   font-size: 16px;
@@ -15,3 +15,32 @@ html {
 
 a {
   text-decoration: none; }
+
+.ModalX-logo {
+  font-family: "Space Age";
+  font-size: 64px;
+  background: -webkit-linear-gradient(left, #083561, #0e6bc2 100px);
+  background: -o-linear-gradient(left, #083561, #0e6bc2 100px);
+  background: linear-gradient(to right, #083561, #0e6bc2 100px);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .nav-menu-item {
+      margin: 0 10px;
+      color: #363636;
+      font-size: 25px; }
