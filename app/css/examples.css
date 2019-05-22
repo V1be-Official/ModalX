@@ -85,7 +85,11 @@ a {
     background: -o-linear-gradient(45deg, #083561 0%, #0e6cc2 100%);
     background: linear-gradient(45deg, #083561 0%, #0e6cc2 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    -webkit-text-fill-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   .nav .links {
     margin-top: 3px; }
     .nav .links .git {
