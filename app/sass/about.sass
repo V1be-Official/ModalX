@@ -1,73 +1,7 @@
 @import 'vars'
 @import 'fonts'
-@import '_media'
-
-html
-    overflow-x: hidden
-    min-width: 320px
-    font-size: 16px
-    font-weight: 400
-    font-family: Montserrat, sans-serif
-a 
-    text-decoration: none
-.btn
-    display: inline-block
-    padding: 15px 45px
-    border: 1px solid $main-color
-    border-radius: 30px
-    font-size: 19px
-    font-weight: 400
-    letter-spacing: 2px
-    color: #000
-    transition: .25s
-    &:hover
-        background-color: $main-color
-        color: #fff
-.nav
-    display: flex
-    position: fixed
-    width: 100%
-    align-items: center
-    justify-content: center
-    left: 0
-    top: 0
-    padding: 15px 0
-    background-color: #fff
-    z-index: 9999
-    .wrapper
-        display: flex
-        width: 85%
-        align-items: center 
-        justify-content: space-between
-    &-menu 
-        display: flex
-        align-items: center
-        &-item 
-            margin: 0 25px
-            font-size: 19px
-            color: $text-color
-            transition: .2s
-            &:hover
-                color: $main-color
-    .ModalX-logo
-        display: inline-flex
-        height: 25px
-        margin-top: 6px
-    .links
-        .git
-            margin: 0 10px
-            color: #000
-            &:hover
-                color: #5f5f5f
-        .telegram
-            margin-right: 30px
-            color: #12a4da
-            &:hover
-                color: #127eda
-        .git, .telegram
-            font-size: 22px
-            transition: .25s
-
+@import 'media'
+@import 'start'
 .header
     position: relative
     width: 100vw
@@ -79,6 +13,7 @@ a
         color: #fff
         font-family: Montserrat, sans-serif
         border: 0
+        padding: 15px 40px
         &:hover
             color: $main-color
             background-color: #fff
