@@ -108,6 +108,22 @@ a {
       -o-transition: .25s;
       transition: .25s; }
 
+@-webkit-keyframes hue {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+    filter: hue-rotate(0deg); }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg); } }
+
+@keyframes hue {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+    filter: hue-rotate(0deg); }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg); } }
+
 .header {
   position: relative;
   width: 100vw;
@@ -142,7 +158,11 @@ a {
     transform: translateY(-50%);
     z-index: 4; }
     .header .main-logo img {
-      width: 32vw; }
+      width: 32vw;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
   .header .wrapper {
     width: 85%;
     margin: 0 auto;
