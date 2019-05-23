@@ -89,7 +89,9 @@ a {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
+    user-select: none;
+    -webkit-animation: 20s hue linear infinite;
+    animation: 20s hue linear infinite; }
   .nav .links {
     margin-top: 3px; }
     .nav .links .git {
