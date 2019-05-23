@@ -124,6 +124,7 @@ a {
     -webkit-filter: hue-rotate(360deg);
     filter: hue-rotate(360deg); } }
 
+body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -196,7 +197,7 @@ a {
 
 .sec_block {
   width: 100vw;
-  height: 105vh;
+  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
