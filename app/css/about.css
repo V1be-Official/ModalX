@@ -220,7 +220,7 @@ body {
   font-family: Montserrat, sans-serif;
   letter-spacing: 2px; }
 
-.sec_block_header_title_spec, .third_block_header_title_spec {
+.sec_block_header_title_spec, .third_block_header_title_spec, .fourth_block_header_title_spec {
   color: #307db1;
   font-weight: normal; }
 
@@ -337,13 +337,12 @@ body {
 .third_block_header_title {
   font-size: 40px;
   font-weight: bold;
-  margin-top: 30px;
   font-family: Montserrat, sans-serif;
   letter-spacing: 2px;
   color: white;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 20px; }
+  padding-top: 40px; }
 
 .third_block_nikita, .third_block_alex {
   width: 95vw;
@@ -403,3 +402,104 @@ body {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
   padding-top: 60px; }
+
+.fourth_block {
+  width: 100vw;
+  height: 140vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.fourth_block_header {
+  margin-top: 50px; }
+
+.fourth_block_header_pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.fourth_block_header_title {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 2px;
+  color: black;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 40px; }
+
+.fourth_block_main {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.fourth_block_main_logo {
+  width: 35%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.fourth_block_main_logo_title h3 {
+  font-size: 90px;
+  font-family: "Space Age";
+  background: -webkit-linear-gradient(45deg, #083561 0%, #0e6cc2 100%);
+  background: -o-linear-gradient(45deg, #083561 0%, #0e6cc2 100%);
+  background: linear-gradient(45deg, #083561 0%, #0e6cc2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.fourth_block_main_logo_feed {
+  padding: 20px 0px; }
+  .fourth_block_main_logo_feed a {
+    color: black;
+    font-size: 27px;
+    padding: 0px 5px; }
+  .fourth_block_main_logo_feed .telegram {
+    color: #12a4da; }
+
+.fourth_block_main_logo_loc {
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding: 30px 0px; }
+
+.fourth_block_main_form {
+  width: 40%;
+  height: 400px; }
