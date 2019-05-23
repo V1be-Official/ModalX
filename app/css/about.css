@@ -206,7 +206,8 @@ a {
   font-family: Montserrat, sans-serif; }
 
 .sec_block_header_title_spec {
-  color: #307db1; }
+  color: #307db1;
+  font-weight: normal; }
 
 .sec_block_main {
   width: calc(100vw - 180px);
