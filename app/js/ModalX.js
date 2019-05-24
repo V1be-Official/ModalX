@@ -53,29 +53,10 @@ function makeNeutral() {
         body.style.overflow = "hidden";
 }
 
-
 class ModalX {
-    constructor(properties = {
-        name: false,
-        func: false,
-        width: 320,
-        height: 180,
-        timer: 100,
-    }) {
-        this.name = properties.name || false;
-        this.func = properties.func || false;
-        this.width = properties.width || 320;
-        this.height = properties.height || 180;
-        this.timer = properties.timer || 100;
-        this.class = properties.class || "";
-        this.id = properties.id || "";
-        this.title = properties.title || "Подтвердите действия:";
-        this.text = properties.text || "";
-        this.buttonText = properties.buttonText || "OK";
-    }
-    alert(text = "Your message has been sent!", className="success", duration = 600, durationOut = 3000) {
+    success(text = "Your message has been sent!", className="", duration = 600, durationOut = 3000) {
         let mainFrame = document.createElement('div');
-        mainFrame.className = "ModalX " + className;
+        mainFrame.className = "ModalX success" + className;
         let mainText = document.createElement('span');
         mainText.className = "text";
         mainText.innerHTML = text;
@@ -84,21 +65,24 @@ class ModalX {
             ModalXAnimations.fadeOut(mainFrame, duration * 0.3);
             setTimeout(function() {
                 body.removeChild(mainFrame)}, duration * 0.3);
+                clearTimeout(timerFade);
         }
-        setTimeout(function() {
-            if(!body.mainFrame)
-                return false;
-            ModalXAnimations.fadeOut(mainFrame, duration);
-            setTimeout(function() {
-                body.removeChild(mainFrame)}, duration);
-
-        } , durationOut);
 
         body.appendChild(mainFrame);
+        let timerFade = setTimeout(function() {
+
+            ModalXAnimations.fadeOut(mainFrame, duration);
+            setTimeout(function() {body.removeChild(mainFrame)}, duration);
+            
+        } , durationOut);
+
         ModalXAnimations.fadeIn(mainFrame, duration);
     }
 }
 
-
 test = new ModalX();
-test.alert();
+
+setTimeout(function() {
+    document.getElementById("ModalX").className += " active";
+}, 1000);
+
