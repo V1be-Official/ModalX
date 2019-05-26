@@ -1,3 +1,5 @@
+'use strict'
+
 let body = document.body;
 
 var ModalXAnimations = {
@@ -45,18 +47,48 @@ var ModalXAnimations = {
         }
     }
 }
-
-function makeNeutral() {
-    if( body.style.overflow == "hidden" )
-        body.style.overflow = null;
-    else
-        body.style.overflow = "hidden";
+function elementOut(element, duration) {
+    ModalXAnimations.fadeOut(element, duration);
+    removeTime(element, duration);                
 }
-
+function remove(element) {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element);
+    }
+}
+function removeTime(element, time) {
+    return setTimeout(function() {
+        remove(element);
+    }, time);
+}
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+function enableScrolling(){
+    window.onscroll=function(){};
+}
+function createElement(tag, className, text, id) {
+    if(!tag)
+        return false;
+    if(!className)
+        className = "";
+    if(!text)
+        text = "";
+    if(!id)
+        id = "";
+    var element = document.createElement(tag);
+    element.className = className;
+    element.innerHTML = text;
+    element.id = id;
+    return element;
+}
 class ModalX {
     constructor() {
+        this.titleText = "";
         this.duration = 600;
-        this.durationOut = 3000;
+        this.durationOut = 3000;  
         this.text = "";
         this.className = "";
         this.type = "primary";
@@ -64,10 +96,10 @@ class ModalX {
         this.buttonText = "OK";
     }
     alert(prop) {
-
-        var text, duration, durationOut, className, type, button, buttonText;
-        
+        var text, duration, durationOut, className, type, button, buttonText, titleText;
+        var fullClass;
         if(!prop) {
+            titleText = this.titleText;
             text = this.text;
             duration = this.duration;
             className = this.className;
@@ -76,6 +108,7 @@ class ModalX {
             button = this.button;
             buttonText = this.buttonText;
         } else {
+            titleText = prop.titleText || this.titleText;
             text = prop.text || this.text;
             duration = prop.duration || this.duration;
             className = prop.className || this.className;
@@ -84,59 +117,54 @@ class ModalX {
             button = prop.button || this.button;
             buttonText = prop.buttonText || this.buttonText;
         }
-
+        
         if(button) {
-            var mainButton = document.createElement("a");
-            mainButton.className = "modalx-btn";
-            mainButton.innerHTML = buttonText;
-            type = "modalx-btn-"+type;
-        }
-            
+            var modalButton = createElement("a", "modalx-btn", buttonText);
+            fullClass = `ModalX modalx-alert-btn modalx-alert-btn-${type}`;
+        } else 
+            fullClass = `ModalX modalx-alert modalx-alert-${type}`;
+        var modalFrame = createElement('div', `${fullClass} ${className}`);
+        if(titleText != "")
+            var modalTitle = createElement('h6', "modalx-title", titleText);
+        var modalText = createElement(`span`, "modalx-text", text);
+        if(modalTitle)
+            modalFrame.appendChild(modalTitle);
+        modalFrame.appendChild(modalText);
 
-        let mainFrame = document.createElement('div');
-        mainFrame.className = "ModalX" + " " + type + " " + className;
-        let mainText = document.createElement('span');
-        mainText.className = "modalx-text";
-        mainText.innerHTML = text;
-        mainFrame.appendChild(mainText);
-        if(mainButton) {
-            mainButton.onclick = function() {
-                elemOut(mainFrame, timerFade, duration)
+        if(modalButton) {
+            modalButton.onclick = function() {
+                elementOut(modalFrame, duration);
+                clearTimeout(timerFade);
+                enableScrolling();
             };
-            mainFrame.appendChild(mainButton);   
+            modalFrame.appendChild(modalButton);   
         } else {
-            mainFrame.onclick = function() {
-                elemOut(mainFrame, timerFade, duration)
+            modalFrame.onclick = function() {
+                elementOut(modalFrame, duration);
+                clearTimeout(timerFade);
+                enableScrolling();
             };
+            var timerFade = setTimeout(function() {
+                ModalXAnimations.fadeOut(modalFrame, duration);
+                removeTime(modalFrame, duration);   
+            } , durationOut);
         }        
-        body.appendChild(mainFrame);
-        var timerFade = setTimeout(function() {
-            ModalXAnimations.fadeOut(mainFrame, duration);
-            setTimeout(function() {
-                body.removeChild(mainFrame)}, duration);
-                console.log(1);    
-        } , durationOut);
-
-        ModalXAnimations.fadeIn(mainFrame, duration);
-
-        function elemOut(element, timer, duration) {
-            console.log(duration);
-            ModalXAnimations.fadeOut(element, duration * 0.3);
-            setTimeout(function() {
-                body.removeChild(element)}, duration * 0.3);
-                clearTimeout(timer);           
-        }
+        body.appendChild(modalFrame);
+        ModalXAnimations.fadeIn(modalFrame, duration);
+        disableScrolling();  
     }
 }
-obj = {
-    text: "Вы молодец",
-    className: "center",
-    duration: 600,
+var obj = {
+    titleText: "Подтвердите действия!",
+    text: "Добро пожаловать!",
+    className: "center-x-top",
+    duration: 400,
     durationOut: 3000,
-    type: "primary",
-    button: false,
-    buttonText: "Отлично"
+    type: "error",
+    button: true,
+    buttonText: "Хорошо"
 }
-test = new ModalX();
+var test = new ModalX();
+
 test.alert(obj);
 
