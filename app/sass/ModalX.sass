@@ -46,47 +46,169 @@ table
 * 
 	box-sizing: border-box
 
-
 .hidden 
     display: none
 
 .ModalX
-    position: fixed
-    overflow: hidden
-    font-family: "Montserrat"
-    box-sizing: border-box
-    margin: 0
-    &.center-x
-        left: 50%
-        transform: translateX(-50%)
-    &.center-y
-        top: 50%
-        transform: translateY(-50%)
-    &.center
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-    &.success
-        width: 26vw
-        zoom: 1.028
-        .wrapper
-            width: 100%
-            background: #4e76e5
-            padding: 15px 0
+    &.modalx
+        &-success
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #1ebf5b
+            color: #ffffff
+            font-family: Montserrat, sans-serif
+            padding: 15px 0 15px 10px
             cursor: pointer
-            transition: background .3s, transform .5s
-            transform: rotateY(90deg)
-            
-            .message
-                color: #fff
-                padding-left: 20px
+            transition: .2s
             &:hover
-                background: #4b6ecc
+                background: #21a252
             &:active
-                background: #3b59ad
-    &.active
-        .wrapper
-            transform: rotateY(0deg)            
-            
+                background: #1f8c48
+
+        &-error
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #e03a3a
+            color: #ffffff
+            font-family: Montserrat, sans-serif
+            padding: 15px 0 15px 10px
+            cursor: pointer
+            transition: .2s
+            &:hover
+                background: #c73434
+            &:active
+                background: #8f2c2c
+
+        &-primary
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #fff
+            color: #38f
+            font-family: Montserrat, sans-serif
+            padding: 15px 0 15px 10px
+            cursor: pointer
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1)
+            transition: .2s
+            &:hover
+                box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1)
+            &:active
+                box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1)
+        &-btn-success
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #1ebf5b
+            color: #ffffff
+            font-family: Montserrat, sans-serif
+            padding: 15px 10px 10px 10px
+            cursor: pointer
+            transition: .2s
+            .modalx-text
+                display: block
+            .modalx-btn
+                float: right
+                margin-right: 15px
+                margin-top: 10px
+                padding: 10px 20px
+                font-size: 14px
+                background: #fff
+                color: #1ebf5b
+                transition: .2s
+                &:hover
+                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1) 
+
+        &-btn-error
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #e03a3a
+            color: #ffffff
+            font-family: Montserrat, sans-serif
+            padding: 15px 10px 10px 10px
+            cursor: pointer
+            transition: .2s
+            .modalx-text
+                display: block
+            .modalx-btn
+                float: right
+                margin-right: 15px
+                margin-top: 10px
+                padding: 10px 20px
+                font-size: 14px
+                background: #fff
+                color: #e03a3a
+                transition: .2s
+                &:hover
+                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1) 
+
+        &-btn-primary
+            position: fixed
+            left: 50%
+            transform: translate(-50%, 0)
+            width: 450px
+            background: #38f
+            color: #ffffff
+            font-family: Montserrat, sans-serif
+            padding: 15px 10px 10px 10px
+            cursor: pointer
+            transition: .2s
+            .modalx-text
+                display: block
+            .modalx-btn
+                float: right
+                margin-right: 15px
+                margin-top: 10px
+                padding: 10px 20px
+                font-size: 14px
+                background: #fff
+                color: #38f
+                transition: .2s
+                &:hover
+                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1) 
+    &.center
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+    &.center-x-top
+        left: 50%
+        top: 0
+        transform: translate(-50%, 0)
+    &.center-x-bottom
+        left: 50%
+        top: 100%
+        transform: translate(-50%, -100%)
+    &.center-y-left
+        left: 0
+        top: 50%
+        transform: translate(0, -50%)
+    &.center-y-right
+        left: 100%
+        top: 50%
+        transform: translate(-100%, -50%)
+    &.left
+        left: 0
+        top: 0
+        transform: translate(0, 0)
+    &.right
+        left: 100%
+        top: 0
+        transform: translate(-100%, 0%)
+    &.left-bottom
+        left: 0
+        top: 100%
+        transform: translate(0, -100%)
+    &.right-bottom
+        left: 100%
+        top: 100%
+        transform: translate(-100%, -100%)
+                
             
         

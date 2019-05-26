@@ -54,35 +54,89 @@ function makeNeutral() {
 }
 
 class ModalX {
-    success(text = "Your message has been sent!", className="", duration = 600, durationOut = 3000) {
-        let mainFrame = document.createElement('div');
-        mainFrame.className = "ModalX success" + className;
-        let mainText = document.createElement('span');
-        mainText.className = "text";
-        mainText.innerHTML = text;
-        mainFrame.appendChild(mainText);
-        mainFrame.onclick = function() {
-            ModalXAnimations.fadeOut(mainFrame, duration * 0.3);
-            setTimeout(function() {
-                body.removeChild(mainFrame)}, duration * 0.3);
-                clearTimeout(timerFade);
+    constructor() {
+        this.duration = 600;
+        this.durationOut = 3000;
+        this.text = "";
+        this.className = "";
+        this.type = "primary";
+        this.button = false;
+        this.buttonText = "OK";
+    }
+    alert(prop) {
+
+        var text, duration, durationOut, className, type, button, buttonText;
+        
+        if(!prop) {
+            text = this.text;
+            duration = this.duration;
+            className = this.className;
+            duration = this.durationOut;
+            type = this.type;
+            button = this.button;
+            buttonText = this.buttonText;
+        } else {
+            text = prop.text || this.text;
+            duration = prop.duration || this.duration;
+            className = prop.className || this.className;
+            durationOut = prop.durationOut || this.durationOut;
+            type = prop.type || this.type;
+            button = prop.button || this.button;
+            buttonText = prop.buttonText || this.buttonText;
         }
 
-        body.appendChild(mainFrame);
-        let timerFade = setTimeout(function() {
-
-            ModalXAnimations.fadeOut(mainFrame, duration);
-            setTimeout(function() {body.removeChild(mainFrame)}, duration);
+        if(button) {
+            var mainButton = document.createElement("a");
+            mainButton.className = "modalx-btn";
+            mainButton.innerHTML = buttonText;
+            type = "modalx-btn-"+type;
+        }
             
+
+        let mainFrame = document.createElement('div');
+        mainFrame.className = "ModalX" + " " + type + " " + className;
+        let mainText = document.createElement('span');
+        mainText.className = "modalx-text";
+        mainText.innerHTML = text;
+        mainFrame.appendChild(mainText);
+        if(mainButton) {
+            mainButton.onclick = function() {
+                elemOut(mainFrame, timerFade, duration)
+            };
+            mainFrame.appendChild(mainButton);   
+        } else {
+            mainFrame.onclick = function() {
+                elemOut(mainFrame, timerFade, duration)
+            };
+        }        
+        body.appendChild(mainFrame);
+        var timerFade = setTimeout(function() {
+            ModalXAnimations.fadeOut(mainFrame, duration);
+            setTimeout(function() {
+                body.removeChild(mainFrame)}, duration);
+                console.log(1);    
         } , durationOut);
 
         ModalXAnimations.fadeIn(mainFrame, duration);
+
+        function elemOut(element, timer, duration) {
+            console.log(duration);
+            ModalXAnimations.fadeOut(element, duration * 0.3);
+            setTimeout(function() {
+                body.removeChild(element)}, duration * 0.3);
+                clearTimeout(timer);           
+        }
     }
 }
-
+obj = {
+    text: "Вы молодец",
+    className: "center",
+    duration: 600,
+    durationOut: 100000,
+    type: "primary",
+    button: true,
+    buttonText: "Отлично"
+}
 test = new ModalX();
-
-setTimeout(function() {
-    document.getElementById("ModalX").className += " active";
-}, 1000);
+test.alert(obj);
 

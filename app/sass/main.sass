@@ -52,6 +52,7 @@
         color: #ffffff
         width: 700px
         min-height: 490px
+
     &-title
         font-size: 90px
         font-weight: bold
@@ -60,6 +61,7 @@
         font-size: 21px
         line-height: 1.65
         letter-spacing: 2px
+
     .links
         .btn
             padding: 17px 45px
@@ -81,6 +83,23 @@
             &:hover
                 background-color: $main-color
                 color: #fff
+    @media screen and (max-width: 1350px)
+        &-main
+            width: 500px
+        &-title
+            font-size: 70px
+        &-subtitle
+            font-size: 19px
+
+    @media screen and (max-height: 780px)
+        &-main
+            min-height: 390px
+            width: 600px
+        &-title
+            font-size: 80px
+        &-subtitle
+            font-size: 18px
+                   
 
     
 
