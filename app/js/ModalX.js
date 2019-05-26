@@ -132,9 +132,9 @@ obj = {
     text: "Вы молодец",
     className: "center",
     duration: 600,
-    durationOut: 100000,
+    durationOut: 3000,
     type: "primary",
-    button: true,
+    button: false,
     buttonText: "Отлично"
 }
 test = new ModalX();
