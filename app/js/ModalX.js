@@ -49,14 +49,14 @@ var ModalXAnimations = {
 }
 function elementOut(element, duration) {
     ModalXAnimations.fadeOut(element, duration);
-    removeTime(element, duration);                
+    removeCurrentTime(element, duration);                
 }
 function remove(element) {
     if (element.parentNode) {
       element.parentNode.removeChild(element);
     }
 }
-function removeTime(element, time) {
+function removeCurrentTime(element, time) {
     return setTimeout(function() {
         remove(element);
     }, time);
@@ -146,7 +146,7 @@ class ModalX {
             };
             var timerFade = setTimeout(function() {
                 ModalXAnimations.fadeOut(modalFrame, duration);
-                removeTime(modalFrame, duration);   
+                removeCurrentTime(modalFrame, duration);   
             } , durationOut);
         }        
         body.appendChild(modalFrame);
@@ -166,5 +166,4 @@ var obj = {
 }
 var test = new ModalX();
 
-test.alert(obj);
 

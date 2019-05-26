@@ -58,7 +58,8 @@ body {
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  font-family: "Montserrat"; }
+  font-family: "Montserrat";
+  z-index: 999999999; }
   .ModalX.modalx-alert {
     width: 450px;
     padding: 20px 0 20px 10px;
