@@ -45,21 +45,23 @@
 		<h2>Just add Modal frames</h2>
 		<div class="select">
 			<div class="option">
-				<div class="option-item">Success<i class="fas fa-sort-down"></i></div>
+				<div class="option-item" id="main-option-item">Success<i class="fas fa-sort-down"></i></div>
 				<ul class="option-menu hidden">
 					<li class="option-menu-h">Alert</li>
-					<li class="option-menu-item" data-name="Alert" data-func="Success">Success</li>
-					<li class="option-menu-item" data-name="Alert" data-func="Wrong">Wrong</li>
-					<li class="option-menu-item" data-name="Alert" data-func="Error">Error</li>
+					<li class="option-menu-item" data-name="alert" data-func="success">Success</li>
+					<li class="option-menu-item" data-name="alert" data-func="primary">Primary</li>
+					<li class="option-menu-item" data-name="alert" data-func="error">Error</li>
+					<li class="option-menu-h">Alert with button</li>
+					<li class="option-menu-item" data-name="alert-btn" data-func="success">Success</li>
+					<li class="option-menu-item" data-name="alert-btn" data-func="primary">Primary</li>
+					<li class="option-menu-item" data-name="alert-btn" data-func="error">Error</li>
 					<li class="option-menu-h">Prompt</li>
-					<li class="option-menu-item" data-name="Prompt" data-func="Phone">Phone</li>
-					<li class="option-menu-item" data-name="Prompt" data-func="Email">Email</li>
-					<li class="option-menu-item" data-name="Prompt" data-func="Name">Name</li>
+					<li class="option-menu-item" data-name="prompt" data-func="primary">Primary</li>
 					<li class="option-menu-h">Confirm</li>
-					<li class="option-menu-item" data-name="Confirm" data-func="Question">Question</li>
+					<li class="option-menu-item" data-name="confirm" data-func="primary">Primary</li>
 				</ul>
 			</div>
-			<a class="show">Show it</a>
+			<a class="show" id="modal-show-it">Show it</a>
 			<div class="line"></div>
 			<div class="links">
 				<a class="download" href="#">Download Modal X</a>
