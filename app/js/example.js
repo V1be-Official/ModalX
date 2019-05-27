@@ -1,8 +1,8 @@
 let option = document.querySelector(".main .option");
 let optionItem = option.querySelector(".option-item");
 let optionMenu = option.querySelector(".option-menu");
-optionItem.setAttribute("data-name", "Alert");
-optionItem.setAttribute("data-func", "Success");
+optionItem.setAttribute("data-name", "alert");
+optionItem.setAttribute("data-func", "success");
 option.addEventListener("click", function(elem) {
     let target = elem.target;
     if(target.classList.contains("option-item") || target.parentNode.classList.contains("option-item")) {
@@ -27,12 +27,22 @@ document.getElementById("modal-show-it").onclick = function() {
     let name = currentChoose.getAttribute("data-name");
     let style = currentChoose.getAttribute("data-func");
     var obj = {
-        
-    };
+        titleText: "Подтвердите действия!",
+        text: "Добро пожаловать!",
+        className: "center-x-top",
+        duration: 400,
+        durationOut: 3000,
+        type: style,
+        button: false,
+        buttonText: "OK",
+        inputText: "Type your text",
+        buttonTextFalse: "Нет",
+        buttonTextTrue: "Да"
+    }
     switch(name) {
-        case "alert":break;
-        case "alert-btn":break;
-        case "confirm":break;
-        case "prompt":break;
+        case "alert": obj.button = false;modal.alert(obj);break;
+        case "alert-btn": obj.button = true;modal.alert(obj);break;
+        case "confirm": modal.confirm(obj);break;
+        case "prompt": modal.prompt(obj);break;
     }
 }

@@ -1,5 +1,8 @@
 'use strict'
 let body = document.body;
+function isFunction(functionToCheck) {
+    return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
 var ModalXAnimations = {
 
     fadeIn: function(element, duration = 500) {
@@ -189,14 +192,16 @@ class ModalX {
             modalFrame.appendChild(modalTitle);
         modalFrame.appendChild(modalText);
         modalButtonTrue.onclick = function() {
-                elementOut(modalFrame, duration);
-                enableScrolling();
+            elementOut(modalFrame, duration);
+            enableScrolling();
+            if(isFunction(func))
                 func(true);
         };
         modalButtonFalse.onclick = function() {
             elementOut(modalFrame, duration);
             enableScrolling();
-            func(false);
+            if(isFunction(func))
+                func(false);
         };
         modalFrame.appendChild(modalButtonTrue);
         modalFrame.appendChild(modalButtonFalse);       
@@ -241,8 +246,9 @@ class ModalX {
         modalFrame.appendChild(modalText);
         modalFrame.appendChild(modalInput);
         modalButton.onclick = function() {
-                elementOut(modalFrame, duration);
-                enableScrolling();
+            elementOut(modalFrame, duration);
+            enableScrolling();
+            if(isFunction(func))
                 func(modalInput.value);
         };
         modalFrame.appendChild(modalButton);       
@@ -252,46 +258,6 @@ class ModalX {
     }
 }
 
-// var objAlert = {
-//     titleText: "Подтвердите действия!",
-//     text: "Добро пожаловать!",
-//     className: "center-x-top",
-//     duration: 400,
-//     durationOut: 3000,
-//     type: "primary",
-//     buttonText: "Хорошо",
-//     button: true,
-//     inputText: "Type your name"
-// }
-// var objConfirm = {
-//     titleText: "Подтвердите действия!",
-//     text: "Добро пожаловать!",
-//     className: "center-x-top",
-//     duration: 400,
-//     durationOut: 3000,
-//     type: "primary",
-//     buttonTextFalse: "Нет",
-//     buttonTextTrue: "Да"
-// }
-// var objPrompt = {
-//     titleText: "Подтвердите действия!",
-//     text: "Добро пожаловать!",
-//     className: "center-x-top",
-//     duration: 400,
-//     durationOut: 3000,
-//     type: "primary",
-//     buttonText: "Хорошо",
-//     inputText: "Type your name"
-// }
-
-// var modal = new ModalX();
-// modal.alert(objAlert);
-// modal.confirm(objConfirm, function(result) {
-//     console.log(result);
-// });
-// modal.prompt(objPrompt,function(result) {
-//     console.log(result);
-// });
 
        
 
