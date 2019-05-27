@@ -48,7 +48,7 @@
 			<h3>1. Download CSS and JS files from GitHub</h3>
 			<div class="code_block">
 				<div class="code_block_text">
-					<a href="https://github.com/V1be-Official/ModalX">https://github.com/V1be-Official/ModalX</a>
+					<a class="main_link" href="https://github.com/V1be-Official/ModalX">https://github.com/V1be-Official/ModalX</a>
 				</div>
 			</div>
 		</div>
@@ -58,14 +58,14 @@
 			<div class="code_block">
 				<div class="code_block_text">
 					var objAlert = { <br>
-     					titleText: "Подтвердите действия!", <br>
-     					text: "Добро пожаловать!", <br>
-     					className: "center-x-top", <br>
-     					duration: 400, <br>
-     					durationOut: 3000, <br>
-     					type: "primary", <br>
-     					buttonText: "Хорошо", <br>
-     					button: true, <br>
+     					<span class="code-obj">titleText</span>: <span class="code-prop">"Подтвердите действия!"</span>, <br>
+     					<span class="code-obj">text</span>: <span class="code-prop">"Добро пожаловать!"</span>, <br>
+     					<span class="code-obj">className</span>: <span class="code-prop">"center-x-top"</span>, <br>
+     					<span class="code-obj">duration</span>: <span class="code-prop">400</span>, <br>
+     					<span class="code-obj">durationOut</span>: <span class="code-prop">3000</span>, <br>
+     					<span class="code-obj">type</span>: <span class="code-prop">"primary"</span>, <br>
+     					<span class="code-obj">buttonText</span>: <span class="code-prop">"Хорошо"</span>, <br>
+     					<span class="code-obj">button</span>: <span class="code-prop">true</span>, <br>
 		 				}
 				</div>
 			</div>
@@ -73,14 +73,14 @@
 			<div class="code_block">
 				<div class="code_block_text">
 					var objConfirm = { <br>
-     					titleText: "Подтвердите действия!", <br>
-     					text: "Добро пожаловать!", <br>
-     					className: "center-x-top", <br>
-     					duration: 400, <br>
-     					durationOut: 3000, <br>
-     					type: "primary", <br>
-     					buttonTextFalse: "Нет", <br>
-     					buttonTextTrue: "Да" <br>
+     					<span class="code-obj">titleText</span>: <span class="code-prop">"Подтвердите действия!"</span>, <br>
+     					<span class="code-obj">text</span>: <span class="code-prop">"Добро пожаловать!"</span>, <br>
+     					<span class="code-obj">className</span>: <span class="code-prop">"center-x-top"</span>, <br>
+     					<span class="code-obj">duration</span>: <span class="code-prop">400</span>, <br>
+     					<span class="code-obj">durationOut</span>: <span class="code-prop">3000</span>, <br>
+     					<span class="code-obj">type</span>: <span class="code-prop">"primary"</span>, <br>
+     					<span class="code-obj">buttonTextFalse</span>: <span class="code-prop">"Нет"</span>, <br>
+     					<span class="code-obj">buttonTextTrue</span>: <span class="code-prop">"Да"</span> <br>
  					}
 				</div>
 			</div>
@@ -88,42 +88,43 @@
 			<div class="code_block">
 				<div class="code_block_text">
 					 var objPrompt = { <br>
-     					titleText: "Подтвердите действия!", <br>
-     					text: "Добро пожаловать!", <br>
-     					className: "center-x-top", <br>
-     					duration: 400, <br>
-     					durationOut: 3000, <br>
-     					type: "primary", <br>
-     					buttonText: "Хорошо", <br>
-     					inputText: "Type your name" <br>
+     					<span class="code-obj">titleText</span>: <span class="code-prop">"Подтвердите действия!"</span>, <br>
+     					<span class="code-obj">text</span>: <span class="code-prop">"Добро пожаловать!"</span>, <br>
+     					<span class="code-obj">className</span>: <span class="code-prop">"center-x-top"</span>, <br>
+     					<span class="code-obj">duration</span>: <span class="code-prop">400</span>, <br>
+     					<span class="code-obj">durationOut</span>: <span class="code-prop">3000</span>, <br>
+     					<span class="code-obj">type</span>: <span class="code-prop">"primary"</span>, <br>
+     					<span class="code-obj">buttonText</span>: <span class="code-prop">"Хорошо"</span>, <br>
+     					<span class="code-obj">inputText</span>: <span class="code-prop">"Type your name"</span> <br>
  					}
 				</div>
 			</div>
 		</div>
+		</span>
 		<div class="main_block_call_obj">
 			<h3>3. Calling objects</h3>
 			<h4>ALERT</h4>
 			<div class="code_block">
 				<div class="code_block_text">
- 					var modal = new ModalX(); <br>
- 					modal.alert(objAlert); <br>
+ 					var <span class="code-prop">modal</span> = <span class="code-obj">new ModalX</span>(); <br>
+ 					modal.<span class="code-func">alert</span>(<span class="code-prop">objAlert</span>); <br>
 				</div>
 			</div>
 			<h4>CONFIRM</h4>
 			<div class="code_block">
 				<div class="code_block_text">
-					var modal = new ModalX(); <br>
-					modal.confirm(objConfirm, function(result) { <br>
-     				console.log(result); <br>
+					var <span class="code-prop">modal</span> = <span class="code-obj">new ModalX</span>(); <br>
+					<span class="code-prop">modal</span>.<span class="code-func">confirm</span>(objConfirm, function(<span class="code-prop">result</span>) { <br>
+     				console.log(<span class="code-prop">result</span>); <br>
  					}); <br>
 				</div>
 			</div>
 			<h4>PROMPT</h4>
 			<div class="code_block">
 				<div class="code_block_text">
-					var modal = new ModalX(); <br>
-					modal.prompt(objPrompt,function(result) { <br>
-     				console.log(result); <br>
+					var <span class="code-prop">modal</span> = <span class="code-obj">new ModalX</span>(); <br>
+					<span class="code-prop">modal</span>.<span class="code-func">prompt</span>(objPrompt, function(<span class="code-prop">result</span>) { <br>
+     				console.log(<span class="code-prop">result</span>); <br>
  					}); <br>
 				</div>
 			</div>
