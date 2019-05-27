@@ -2,9 +2,135 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Documentation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Modal X - Documentation</title>
+	<link rel="shortcut icon" href="../img/MX-logo-browser.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/documentation.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400i&display=swap" rel="stylesheet">
 </head>
 <body>
-	
+	<nav class="nav">
+		<div class="wrapper">
+			<a class="ModalX-logo" href="../index.html">MX</a>
+			<ul class="nav-menu">
+				<a href="../index.html" class="nav-menu-item">
+					<li>Home</li>
+				</a>
+				<a href="documentation.html" class="nav-menu-item">
+					<li>Documentation</li>
+				</a>
+				<a href="examples.html" class="nav-menu-item">
+					<li>Examples</li>
+				</a>
+				<a href="about.html" class="nav-menu-item">
+					<li>About us</li>
+				</a>
+			</ul>
+			<div class="links">
+				<a class="git" href="#"><i class="fab fa-github"></i></a>
+				<a class="telegram" href="#"><i class="fab fa-telegram"></i></a>
+				<a href="#" class="btn download">Download</a>
+			</div>
+		</div>
+	</nav>
+	<div class="main_block">
+		<div class="main_block_title">
+			<h2>
+				HOW TO USE IT
+			</h2>
+		</div>
+		<div class="main_block_download_links">
+			<h3>1. Download CSS and JS files from GitHub</h3>
+			<div class="code_block">
+				<div class="code_block_text">
+					<a href="https://github.com/V1be-Official/ModalX">https://github.com/V1be-Official/ModalX</a>
+				</div>
+			</div>
+		</div>
+		<div class="main_block_creating_objects">
+			<h3>2. Choose which modal window you need to use</h3>
+			<h4>ALERT</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+					var objAlert = { <br>
+     					titleText: "Подтвердите действия!", <br>
+     					text: "Добро пожаловать!", <br>
+     					className: "center-x-top", <br>
+     					duration: 400, <br>
+     					durationOut: 3000, <br>
+     					type: "primary", <br>
+     					buttonText: "Хорошо", <br>
+     					button: true, <br>
+		 				}
+				</div>
+			</div>
+			<h4>CONFIRM</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+					var objConfirm = { <br>
+     					titleText: "Подтвердите действия!", <br>
+     					text: "Добро пожаловать!", <br>
+     					className: "center-x-top", <br>
+     					duration: 400, <br>
+     					durationOut: 3000, <br>
+     					type: "primary", <br>
+     					buttonTextFalse: "Нет", <br>
+     					buttonTextTrue: "Да" <br>
+ 					}
+				</div>
+			</div>
+			<h4>PROMPT</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+					 var objPrompt = { <br>
+     					titleText: "Подтвердите действия!", <br>
+     					text: "Добро пожаловать!", <br>
+     					className: "center-x-top", <br>
+     					duration: 400, <br>
+     					durationOut: 3000, <br>
+     					type: "primary", <br>
+     					buttonText: "Хорошо", <br>
+     					inputText: "Type your name" <br>
+ 					}
+				</div>
+			</div>
+		</div>
+		<div class="main_block_call_obj">
+			<h3>3. Calling objects</h3>
+			<h4>ALERT</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+ 					var modal = new ModalX(); <br>
+ 					modal.alert(objAlert); <br>
+				</div>
+			</div>
+			<h4>CONFIRM</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+					var modal = new ModalX(); <br>
+					modal.confirm(objConfirm, function(result) { <br>
+     				console.log(result); <br>
+ 					}); <br>
+				</div>
+			</div>
+			<h4>PROMPT</h4>
+			<div class="code_block">
+				<div class="code_block_text">
+					var modal = new ModalX(); <br>
+					modal.prompt(objPrompt,function(result) { <br>
+     				console.log(result); <br>
+ 					}); <br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+			<p>© 2019 3WEB Company, Inc.</p>
+	</div>
 </body>
 </html>
