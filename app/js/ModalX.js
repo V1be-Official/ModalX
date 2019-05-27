@@ -251,6 +251,7 @@ class ModalX {
         disableScrolling();
     }
 }
+
 var obj = {
     titleText: "Подтвердите действия!",
     text: "Добро пожаловать!",
@@ -262,10 +263,6 @@ var obj = {
     button: true,
     inputText: "Type your name"
 }
-var test = new ModalX();
-test.confirm(obj, function(e) {
-    console.log(e);
-});
 
        
 
