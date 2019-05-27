@@ -252,17 +252,46 @@ class ModalX {
     }
 }
 
-var obj = {
-    titleText: "Подтвердите действия!",
-    text: "Добро пожаловать!",
-    className: "center-x-top",
-    duration: 400,
-    durationOut: 3000,
-    type: "primary",
-    buttonText: "Хорошо",
-    button: true,
-    inputText: "Type your name"
-}
+// var objAlert = {
+//     titleText: "Подтвердите действия!",
+//     text: "Добро пожаловать!",
+//     className: "center-x-top",
+//     duration: 400,
+//     durationOut: 3000,
+//     type: "primary",
+//     buttonText: "Хорошо",
+//     button: true,
+//     inputText: "Type your name"
+// }
+// var objConfirm = {
+//     titleText: "Подтвердите действия!",
+//     text: "Добро пожаловать!",
+//     className: "center-x-top",
+//     duration: 400,
+//     durationOut: 3000,
+//     type: "primary",
+//     buttonTextFalse: "Нет",
+//     buttonTextTrue: "Да"
+// }
+// var objPrompt = {
+//     titleText: "Подтвердите действия!",
+//     text: "Добро пожаловать!",
+//     className: "center-x-top",
+//     duration: 400,
+//     durationOut: 3000,
+//     type: "primary",
+//     buttonText: "Хорошо",
+//     inputText: "Type your name"
+// }
+
+// var modal = new ModalX();
+// modal.alert(objAlert);
+// modal.confirm(objConfirm, function(result) {
+//     console.log(result);
+// });
+// modal.prompt(objPrompt,function(result) {
+//     console.log(result);
+// });
 
        
 
