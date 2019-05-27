@@ -1,7 +1,5 @@
 'use strict'
-
 let body = document.body;
-
 var ModalXAnimations = {
 
     fadeIn: function(element, duration = 500) {
@@ -94,6 +92,10 @@ class ModalX {
         this.type = "primary";
         this.button = false;
         this.buttonText = "OK";
+        this.inputText = "Type your text";
+        this.result = undefined;
+        this.buttonTextFalse = "No";
+        this.buttonTextTrue = "YES";
     }
     alert(prop) {
         var text, duration, durationOut, className, type, button, buttonText, titleText;
@@ -153,6 +155,101 @@ class ModalX {
         ModalXAnimations.fadeIn(modalFrame, duration);
         disableScrolling();  
     }
+    confirm(prop, func) {
+        var duration, durationOut, className, type, text, buttonTextTrue, buttonTextFalse, titleText;
+        var fullClass;
+        if(!prop) {
+            titleText = this.titleText;
+            text = this.text;
+            duration = this.duration;
+            className = this.className;
+            duration = this.durationOut;
+            type = this.type;
+            buttonTextFalse = this.buttonTextFalse;
+            buttonTextTrue = this.buttonTextTrue;
+        } else {
+            titleText = prop.titleText || this.titleText;
+            text = prop.text || this.text;
+            duration = prop.duration || this.duration;
+            className = prop.className || this.className;
+            durationOut = prop.durationOut || this.durationOut;
+            type = prop.type || this.type;
+            buttonTextFalse = prop.buttonTextFalse || this.buttonTextFalse;
+            buttonTextTrue = prop.buttonTextTrue || this.buttonTextTrue;
+        }
+        
+        fullClass = `ModalX modalx-confirm modalx-confirm-${type}`;
+        var modalFrame = createElement('div', `${fullClass} ${className}`);
+        if(titleText != "" && titleText)
+            var modalTitle = createElement('h6', "modalx-title", titleText);
+        var modalText = createElement(`span`, "modalx-text", text);
+        var modalButtonTrue = createElement("a", "modalx-btn modalx-btn-true", buttonTextTrue);
+        var modalButtonFalse = createElement("a", "modalx-btn modalx-btn-false", buttonTextFalse);
+        if(modalTitle)
+            modalFrame.appendChild(modalTitle);
+        modalFrame.appendChild(modalText);
+        modalButtonTrue.onclick = function() {
+                elementOut(modalFrame, duration);
+                enableScrolling();
+                func(true);
+        };
+        modalButtonFalse.onclick = function() {
+            elementOut(modalFrame, duration);
+            enableScrolling();
+            func(false);
+        };
+        modalFrame.appendChild(modalButtonTrue);
+        modalFrame.appendChild(modalButtonFalse);       
+        body.appendChild(modalFrame);
+        ModalXAnimations.fadeIn(modalFrame, duration);
+        disableScrolling();        
+    }
+    prompt(prop, func) {
+        var duration, durationOut, className, type, text, buttonText, titleText, inputText;
+        var fullClass;
+        if(!prop) {
+            titleText = this.titleText;
+            text = this.text;
+            duration = this.duration;
+            className = this.className;
+            duration = this.durationOut;
+            type = this.type;
+            buttonText = this.buttonText;
+            inputText = this.inputText;
+        } else {
+            titleText = prop.titleText || this.titleText;
+            text = prop.text || this.text;
+            duration = prop.duration || this.duration;
+            className = prop.className || this.className;
+            durationOut = prop.durationOut || this.durationOut;
+            type = prop.type || this.type;
+            buttonText = prop.buttonText || this.buttonText;
+            inputText = prop.inputText || this.inputText;
+        }
+        
+        fullClass = `ModalX modalx-prompt modalx-prompt-${type}`;
+        var modalFrame = createElement('div', `${fullClass} ${className}`);
+        if(titleText != "" && titleText)
+            var modalTitle = createElement('h6', "modalx-title", titleText);
+        var modalText = createElement(`span`, "modalx-text", text);
+        var modalInput = createElement(`input`, "modalx-input");
+        modalInput.type = "text";
+        modalInput.placeholder = inputText;
+        var modalButton = createElement("a", "modalx-btn", buttonText);
+        if(modalTitle)
+            modalFrame.appendChild(modalTitle);
+        modalFrame.appendChild(modalText);
+        modalFrame.appendChild(modalInput);
+        modalButton.onclick = function() {
+                elementOut(modalFrame, duration);
+                enableScrolling();
+                func(modalInput.value);
+        };
+        modalFrame.appendChild(modalButton);       
+        body.appendChild(modalFrame);
+        ModalXAnimations.fadeIn(modalFrame, duration);
+        disableScrolling();
+    }
 }
 var obj = {
     titleText: "Подтвердите действия!",
@@ -160,10 +257,15 @@ var obj = {
     className: "center-x-top",
     duration: 400,
     durationOut: 3000,
-    type: "error",
+    type: "primary",
+    buttonText: "Хорошо",
     button: true,
-    buttonText: "Хорошо"
+    inputText: "Type your name"
 }
 var test = new ModalX();
+test.confirm(obj, function(e) {
+    console.log(e);
+});
 
+       
 

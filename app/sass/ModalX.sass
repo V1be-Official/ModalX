@@ -15,7 +15,13 @@ $error-background-active: #8f2c2c
 $error-text-color: #fff
 
 $alert-width: 450px
-$alert-padding: 20px 0 20px 10px
+$alert-padding: 20px 10px 20px 10px
+
+$prompt-width: 450px
+$prompt-padding: 20px 10px 20px 10px
+$prompt-btn-padding: 8px 25px 
+$prompt-input-width: 90%
+$prompt-input-height: 30px
 
 $alert-btn-padding: 8px 25px
 
@@ -160,7 +166,101 @@ body
                 background: #fff
                 color: $primary-background
                 &:hover
-                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1) 
+                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1)
+    &.modalx-prompt
+        width: $prompt-width
+        padding: $prompt-padding
+        .modalx
+            &-title
+                font-size: 18px
+                font-weight: bold
+                margin: 0 0 16px 5px
+            &-text
+                display: block
+                font-size: 15px
+                margin: 0 0 16px 5px
+            &-input
+                display: block
+                margin: 0 auto 15px auto
+                width: $prompt-input-width
+                height: $prompt-input-height
+                border: 0 
+            &-btn
+                display: inline-block
+                float: right
+                margin: 0 20px 0 0
+                padding: $prompt-btn-padding  
+                cursor: pointer
+                transition: .2s            
+        &-primary
+            background: $primary-background
+            color: $primary-text-color
+            .modalx
+                &-btn
+                    background: #fff
+                    color: $primary-background
+                    &:hover
+                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1)
+                &-input
+                    font-family: $font-family
+                    background: $primary-background
+                    color: #fff
+                    border-bottom: 2px solid $primary-background-hover
+                    font-size: 15px
+                    letter-spacing: 1.5px
+                    &:focus
+                        outline: 0
+                    &::placeholder
+                        color: $primary-background-active 
+    &.modalx-confirm
+        width: $prompt-width
+        padding: $prompt-padding
+        .modalx
+            &-title
+                font-size: 18px
+                font-weight: bold
+                text-align: center
+                margin: 0 0 16px 5px
+            &-text
+                display: block
+                font-size: 15px
+                text-align: center
+                margin: 0 0 16px 5px
+            &-btn
+                display: inline-block
+                width: 49%  
+                float: left
+                height: 40px
+                font-size: 16px
+                font-weight: bold
+                line-height: 40px
+                text-align: center
+                cursor: pointer
+                transition: .2s
+                &:hover
+                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1)                    
+                &-false
+                    float: right      
+        &-primary
+            background: $primary-background
+            color: $primary-text-color
+            .modalx
+                &-btn
+                    background: #fff
+                    color: $primary-background
+                    &:hover
+                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1)
+                &-input
+                    font-family: $font-family
+                    background: $primary-background
+                    color: #fff
+                    border-bottom: 2px solid $primary-background-hover
+                    font-size: 15px
+                    letter-spacing: 1.5px
+                    &:focus
+                        outline: 0
+                    &::placeholder
+                        color: $primary-background-active 
     &.center
         left: 50%
         top: 50%
